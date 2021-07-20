@@ -38,4 +38,9 @@ True
 False
 carrie@ubuntu:~/0x00-lockboxes$
 ```
+<br>
+
+## Solution:
+
+<br>
 <img src="https://www.holbertonschool.com/holberton-logo.png">
