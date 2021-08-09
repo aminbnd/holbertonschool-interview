@@ -29,3 +29,11 @@ carrie@ubuntu:0x01$ ./insert
 1024
 carrie@ubuntu:0x01$
 ```
+To try the code:
+* Clone this reporsitory on your Pc,
+* Compile the files using the following flags:<br>
+`gcc -Wall -Werror -Wextra -pedantic 0-main.c linked_lists.c 0-insert_number.c -o insert`
+* Run the code:<br>
+`./insert`
+<br><br>
+<img src ="https://www.holbertonschool.com/holberton-logo.png">
