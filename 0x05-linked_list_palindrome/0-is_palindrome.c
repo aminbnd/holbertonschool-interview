@@ -19,10 +19,10 @@ int is_palindrome(listint_t **head)
 
 	for (j = 0; prevHead; prevHead = prevHead->next, j++)
 		list[j] = prevHead->n;
-	
+
 	for (j = 0; j < i; j++)
 	{
-		if(list[j] != list[i - j - 1])
+		if (list[j] != list[i - j - 1])
 			return (0);
 	}
 	return (1);

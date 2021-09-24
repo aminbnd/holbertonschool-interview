@@ -26,7 +26,7 @@ int main(void)
 		printf("Linked list is a palidrome\n");
 	else
 		printf("Linked list is not a palindrome\n");
-	
+
 	free_listint(head);
 
 	return (0);
