@@ -6,23 +6,20 @@
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *prevHead = *head;
-	int j;
-	int i;
-	int list[1024];
+	listint_t *oldHead = *head;
+	int counter = 0, i = 0;
+	int list[2048];
 
-	for (i = 0; prevHead; i++)
-		prevHead = prevHead->next;
+	for (i = 0; oldHead; i++)
+		oldHead = oldHead->next;
 	if (i == 0)
 		return (1);
-	prevHead = *head;
-
-	for (j = 0; prevHead; prevHead = prevHead->next, j++)
-		list[j] = prevHead->n;
-
-	for (j = 0; j < i; j++)
+	oldHead = *head;
+	for (counter = 0; oldHead; oldHead = oldHead->next, counter++)
+		list[counter] = oldHead->n;
+	for (counter = 0; counter < i; counter++)
 	{
-		if (list[j] != list[i - j - 1])
+		if (list[counter] != list[i - counter - 1])
 			return (0);
 	}
 	return (1);
