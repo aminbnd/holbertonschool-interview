@@ -4,6 +4,7 @@
 Rain program
 """
 
+
 def rain(walls):
     
     result = 0
