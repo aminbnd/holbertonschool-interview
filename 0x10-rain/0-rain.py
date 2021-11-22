@@ -6,7 +6,7 @@ Rain program
 
 
 def rain(walls):
-    
+
     result = 0
     if len(walls) == 0:
         return 0
