@@ -44,6 +44,12 @@ void heapify(int *array, int n, size_t size, int i)
 	}
 }
 
+/**
+ * heap_sort - heap sort
+ *
+ * @array: array of int
+ * @size: size of the array
+ */
 
 void heap_sort(int *array, size_t size)
 {
