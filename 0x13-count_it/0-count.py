@@ -23,7 +23,7 @@ def elements_count(request, list_of_words, results):
     return results
 
 
-def words_count(subreddit, word_list, results={}, param={'limit': 100}):
+def count_words(subreddit, word_list, results={}, param={'limit': 100}):
     """ recursive method that counts number of elements """
     baseLink = 'https://api.reddit.com/r/%s/hot.json' % subreddit
 
@@ -50,4 +50,4 @@ def words_count(subreddit, word_list, results={}, param={'limit': 100}):
             print("{}: {}".format(i[0], i[1]))
     else:
         results = elements_count(data, word_list, results)
-        words_count(subreddit, word_list, results, param)
+        count_words(subreddit, word_list, results, param)
