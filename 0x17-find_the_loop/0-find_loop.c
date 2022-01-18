@@ -2,16 +2,17 @@
 
 
 /**
- * find_listint_loop -  Function that finds a loop in a linked list 
- * 
+ * find_listint_loop -  Function that finds a loop in a linked list
+ *
  * @head: pointer to the head of the list
- * Return: The address of the node where the loop starts, or NULL if there is no loop 
+ * Return: The address of the node where the loop starts,
+ * or NULL if there is no loop
  */
 listint_t *find_listint_loop(listint_t *head)
 {
 	listint_t *p1, *p2;
 
-	if(head == NULL)
+	if (head == NULL)
 		return (0);
 	p1 = head;
 	p2 = head;
@@ -22,7 +23,7 @@ listint_t *find_listint_loop(listint_t *head)
 		if (p1 == p2)
 			break;
 	}
-	if(p1 != p2)
+	if (p1 != p2)
 		return (NULL);
 	p1 = head;
 
