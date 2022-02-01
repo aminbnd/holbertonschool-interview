@@ -20,17 +20,17 @@ def makeChange(coins, total):
     if not coins or coins is None:
         return -1
     coins.sort(reverse=True)
-    x = 0
-    y = 0
+    coinValue = 0
+    coinNumber = 0
     i = 0
     while i < len(coins):
-        if(x + coins[i] > total):
+        if(coinValue + coins[i] > total):
             i += 1
         else:
-            x += coins[i]
-            y += 1
-    if x == total:
-        return (y)
-    if x == 0:
+            coinValue += coins[i]
+            coinNumber += 1
+    if coinValue == total:
+        return (coinNumber)
+    if coinValue == 0:
         return(-1)
     return (-1)
