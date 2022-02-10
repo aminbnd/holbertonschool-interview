@@ -1,7 +1,6 @@
 #ifndef LIST_H
 #define LIST_H
 
-/***** Header files ****/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -17,16 +16,15 @@
  */
 typedef struct List
 {
-  char *str;
-  struct List *prev;
-  struct List *next;
-} List;
+	char *str;
+	struct List *prev;
+	struct List *next;
+}	List;
 
 
-/**** Prototypes ****/
 
 List *add_node_end(List **list, char *str);
 List *add_node_begin(List **list, char *str);
 
 
-#endif /* LIST_H */
+#endif
