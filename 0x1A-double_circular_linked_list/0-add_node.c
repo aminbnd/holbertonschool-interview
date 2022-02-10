@@ -1,74 +1,72 @@
 #include "list.h"
-
 /**
- * createNode - Creates new Node
+ * Create a node object - creates a node in a linked list
  *
- * @string: Data contained in the node
- * Return: the created node (of type List)
+ * @str: data contained in the node
+ * Return: pointer to the created node
  */
 
-List *createNode(char *string)
+List *create_node(char *str)
 {
-	List *newNode = NULL;
+	List *new_node = NULL;
 
-	newNode = malloc(sizeof(List));
-	if (!newNode)
+	new_node = malloc(sizeof(List));
+	if (!new_node)
 		return (NULL);
-	newNode->str = strdup(string);
-	newNode->next = NULL;
-	newNode->prev = NULL;
-	if (!newNode->str)
+	new_node->str = strdup(str);
+	new_node->next = NULL;
+	new_node->prev = NULL;
+	if (!new_node->str)
 		return (NULL);
-	return (newNode);
+	return (new_node);
 }
 
 /**
- * add_node_end - adds a node at the end of a linked list
+ * add_node_end - adds node at the end of linked list
  *
- * @list: the list to edit
- * @str: the data contained in the node (string)
- * Return: the new added node
+ * @list: the linked list to add the node to
+ * @str: data contained in the node (string)
+ * Return: pointer to the added node
  */
 
 List *add_node_end(List **list, char *str)
 {
-	List *last_node, *new_node;
+	List *last, *new;
 
 	if (!str)
 		return (NULL);
-	new_node = createNode(str);
-	if (new_node == NULL)
+	new = create_node(str);
+	if (new == NULL)
 		return (NULL);
 	if (!list || !(*list))
 	{
-		*list = new_node;
-		(*list)->prev = new_node;
-		(*list)->next = new_node;
-		return (new_node);
+		*list = new;
+		(*list)->prev = new;
+		(*list)->next = new;
+		return (new);
 	}
-	last_node = (*list)->prev;
+	last = (*list)->prev;
 
-	new_node->next = *list;
-	(*list)->prev = new_node;
-	last_node->next = new_node;
-	new_node->prev = last_node;
+	new->next = *list;
+	(*list)->prev = new;
+	last->next = new;
+	new->prev = last;
 
-	return (new_node);
+	return (new);
 }
 
 /**
- * add_node_begin - adds a node at the begining of a linked List
+ * add_node_begin - adds a node at the start of linked list
  *
- * @list: the linked list to edit
- * @str: data contained in the node to add (string)
+ * @list: the list to add the node to
+ * @str: the data contained in the node (string)
  * Return: the added node
  */
-
 List *add_node_begin(List **list, char *str)
 {
-	List *new_node;
+	List *new;
 
-	new_node = add_node_end(list, str);
-	(*list) = new_node;
-	return (new_node);
+	new = add_node_end(list, str);
+	(*list) = new;
+	return (new);
 }
