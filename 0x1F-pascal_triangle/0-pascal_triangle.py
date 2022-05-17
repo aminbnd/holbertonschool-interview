@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """ Pascal triangle """
+
+
 def factorial(n):
     """ Function that computes the factorial of an integer n"""
     if n <= 1:
@@ -7,8 +9,10 @@ def factorial(n):
     else:
         return n * factorial(n - 1)
 
+
 def binomialCoefficient(n, k):
-    return int(factorial(n) / (factorial(k) * factorial(n -k)))
+    """Function that computes the binomial coefficient"""
+    return int(factorial(n) / (factorial(k) * factorial(n - k)))
 
 
 def pascal_triangle(n):
@@ -22,6 +26,6 @@ def pascal_triangle(n):
     for i in range(n):
         row = []
         for j in range(i + 1):
-            row.append(binomialCoefficient(i,j))
+            row.append(binomialCoefficient(i, j))
         triangle.append(row)
     return triangle
