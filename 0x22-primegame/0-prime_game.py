@@ -2,7 +2,6 @@
 """ Prime Game """
 
 
-
 def SieveOfEratosthenes(nums):
     """ Using Sieve Of Eratos thenes to get prime numbers"""
     n = max(nums)
@@ -12,7 +11,7 @@ def SieveOfEratosthenes(nums):
     prime = [True for _ in range(n+1)]
     p = 2
     while(p * p <= n):
-        if(prime[p] == True):
+        if prime[p]:
             for i in range(p * 2, n + 1, p):
                 prime[i] = False
         p += 1
