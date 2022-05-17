@@ -2,13 +2,16 @@
 """ Pascal triangle """
 
 
+from unittest import result
+
+
 def factorial(n):
     """ Function that computes the factorial of an integer n"""
-    if n <= 1:
-        return 1
-    else:
-        return n * factorial(n - 1)
-
+    result = 1
+    if n > 1:
+        for i in range(1, n + 1):
+            result *= i
+    return result
 
 def binomialCoefficient(n, k):
     """Function that computes the binomial coefficient"""
