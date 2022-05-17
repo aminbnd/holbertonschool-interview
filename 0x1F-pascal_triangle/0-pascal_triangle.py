@@ -12,8 +12,6 @@ def factorial(n):
 
 def binomialCoefficient(n, k):
     """Function that computes the binomial coefficient"""
-    # if (k > n - k):
-    #     k = n - k
     return (factorial(n) // (factorial(k) * factorial(n - k)))
 
 
