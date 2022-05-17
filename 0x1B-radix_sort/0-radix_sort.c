@@ -32,11 +32,15 @@ int getMax(int arr[], int n)
 void countSort(int arr[], int n, int exp)
 {
 	int *output;
-	int i, count[1024] = {0};
+	int i, *count;
 
 	output = malloc(sizeof(int) * n);
+	count = malloc(sizeof(int) * getMax(arr, n) + 1);
 	if (output == NULL || count == NULL)
+	{
 		free(output);
+		free(count);
+	}
 	for (i = 0; i <= getMax(arr, n); i++)
 		count[i] = 0;
 	for (i = 0; i < n; i++)
@@ -53,6 +57,7 @@ void countSort(int arr[], int n, int exp)
 	for (i = 0; i < n; i++)
 		arr[i] = output[i];
 	free(output);
+	free(count);
 }
 
 
