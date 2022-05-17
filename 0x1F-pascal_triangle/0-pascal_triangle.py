@@ -12,9 +12,9 @@ def factorial(n):
 
 def binomialCoefficient(n, k):
     """Function that computes the binomial coefficient"""
-    if (k > n - k):
-        k = n - k
-    return int(factorial(n) / (factorial(k) * factorial(n - k)))
+    # if (k > n - k):
+    #     k = n - k
+    return (factorial(n) // (factorial(k) * factorial(n - k)))
 
 
 def pascal_triangle(n):
