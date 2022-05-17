@@ -50,8 +50,8 @@ void countSort(int arr[], int n, int exp)
 
 	for (i = n - 1; i >= 0; i--)
 	{
-		output[count[(arr[i] / exp) % 10] - 1] = arr[i];
-		count[(arr[i] / exp) % 10]--;
+		output[count[(arr[i] / exp) % 10]-- - 1] = arr[i];
+		/*count[(arr[i] / exp) % 10]--;*/
 	}
 
 	for (i = 0; i < n; i++)
