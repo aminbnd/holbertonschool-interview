@@ -4,17 +4,16 @@
 
 def factorial(n):
     """ Function that computes the factorial of an integer n"""
-    result = 1
-    if n > 1:
-        for i in range(1, n + 1):
-            result *= i
-    return result
+    if n <= 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
 
 
 def binomialCoefficient(n, k):
     """Function that computes the binomial coefficient"""
     if (k > n - k):
-        k = n -k
+        k = n - k
     return int(factorial(n) / (factorial(k) * factorial(n - k)))
 
 
