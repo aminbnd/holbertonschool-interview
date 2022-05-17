@@ -2,19 +2,22 @@
 
 /**
  * getMax - Get the Max object
- * 
+ *
  * @arr: array to sort
- * @n: integer 
- * Return: int 
+ * @n: integer
+ * Return: int
  */
 
 int getMax(int arr[], int n)
 {
 	int max = arr[0];
 	int i;
+
 	for (i = 1; i < n; i++)
-		if(arr[i] > max)
-			max = arr[i];
+		{
+			if (arr[i] > max)
+				max = arr[i];
+		}
 	return max;
 }
 
