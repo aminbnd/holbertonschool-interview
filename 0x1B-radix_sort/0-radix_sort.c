@@ -32,14 +32,14 @@ int getMax(int arr[], int n)
 void countSort(int arr[], int n, int exp)
 {
 	int *output;
-	int i, *count;
+	int i, count[1024] = {0};
 
 	output = malloc(sizeof(int) * n);
-	count = malloc(sizeof(int) * getMax(arr, n) + 1);
+	/*count = malloc(sizeof(int) * getMax(arr, n) + 1);*/
 	if (output == NULL || count == NULL)
 	{
 		free(output);
-		free(count);
+		/*free(count);*/
 	}
 	for (i = 0; i <= getMax(arr, n); i++)
 		count[i] = 0;
@@ -50,8 +50,8 @@ void countSort(int arr[], int n, int exp)
 
 	for (i = n - 1; i >= 0; i--)
 	{
-		output[count[(arr[i] / exp) % 10]-- - 1] = arr[i];
-		/*count[(arr[i] / exp) % 10]--;*/
+		output[count[(arr[i] / exp) % 10] - 1] = arr[i];
+		count[(arr[i] / exp) % 10]--;
 	}
 
 	for (i = 0; i < n; i++)
@@ -72,6 +72,9 @@ void radix_sort(int *array, size_t size)
 {
 	int m = getMax(array, size);
 	int exp;
+
+	if (array == NULL || size <= 1)
+		return;
 
 	for (exp = 1; m / exp > 0; exp *= 10)
 	{
