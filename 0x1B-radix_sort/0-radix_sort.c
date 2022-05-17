@@ -57,7 +57,7 @@ void countSort(int arr[], int n, int exp)
 	for (i = 0; i < n; i++)
 		arr[i] = output[i];
 	free(output);
-	free(count);
+	/*free(count);*/
 }
 
 
