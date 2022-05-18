@@ -26,8 +26,8 @@ int *find_substring(char const *s, char const **words, int nb_words, int *n)
 	*n = 0;
 	stringlen = strlen(s);
 	wordlen = strlen(words[0]);
-	elements = malloc(stringlen * sizeof(int));
 	found = malloc(nb_words * sizeof(int));
+	elements = malloc(stringlen * sizeof(int));
 	for (i = 0; i <= stringlen - nb_words * wordlen; i++)
 	{
 		for (j = 0; j < nb_words; j++)
@@ -36,7 +36,7 @@ int *find_substring(char const *s, char const **words, int nb_words, int *n)
 		{
 			for (k = 0; k < nb_words; k++)
 			{
-				if (found[k] == 0 && strncmp(s + i + j * wordlen, words[k], wordlen))
+				if (found[k] == 0 && strncmp(s + i + j * wordlen, words[k], wordlen) == 0)
 				{
 					found[k] = 1;
 					break;
